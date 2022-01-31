@@ -2,12 +2,9 @@
 #include <string>
 #include <iostream>
 #include <filesystem>
-#include <vector>
-//#include <fstream>
 
 using namespace drogon;
 namespace fs = std::filesystem;
-
 
 std::string fileName;
 std::vector<std::string> fileList;
@@ -69,23 +66,11 @@ int main()
                         fileListSum += fileName;
                     }
                 }
-/*
-                for (int i = 0; i < fileList.size(); i++)
-                {
-                     += fileList[i];
-                }
-                
-*/
+
                 resp->setBody(fileListSum);
                 callback(resp);
                 fileListSum = "";
-
-/*
-                for (int i = 0; i < fileList.size(); i++)
-                {
-                    fileListSum.pop_back();
-                }
-*/                
+              
         },
         { Get });
 
